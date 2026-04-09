@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de paletas aleatorios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Color Fly Studio</h1>
+    </header>
+
+    <main>
+        <section class="controls">
+            <fieldset>
+                <legend>Cantidad</legend>
+                <select id="size-select">
+                    <option value="6">6 Colores</option>
+                    <option value="8">8 Colores</option>
+                    <option value="9">9 Colores</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Formato</legend>
+                <label><input type="radio" name="format" value="hex" checked> HEX</label>
+                <label><input type="radio" name="format" value="hsl"> HSL</label>
+            </fieldset>
+
+            <button id="generate-btn">Generar paleta</button>
+        </section>
+
+        <div id="palette-grid" class="palette-grid"></div>
+    </main>
+
+    <div id="toast" class="toast">Copiado al portapapeles</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
