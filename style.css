@@ -97,7 +97,7 @@ select {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 1.5rem;
     width: 100%;
-    max-width: 100px;
+    max-width: 1100px;
 }
 
 /* Tarjeta de color (<article>) */
@@ -148,4 +148,68 @@ code {
 .toast.show {
     opacity: 1;
     transform: translateY(-10px);
+}
+
+/* --- TABLET (Pantallas medianas) --- */
+@media (max-width: 768px) {
+    body {
+        padding: 1.5rem; /* Menos espacio en los bordes */
+    }
+
+    header {
+        margin-bottom: 2rem;
+    }
+
+    header h1 {
+        font-size: 2rem; /* Título un poco más pequeño */
+    }
+
+    .palette-grid {
+        /* Ajustamos el tamaño mínimo de la tarjeta para que quepan 2 por fila cómodamente */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+}
+
+/* --- MÓVIL (Pantallas pequeñas) --- */
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.75rem;
+    }
+
+    /* Los controles suelen verse amontonados en móvil, los ponemos en columna */
+    .controls {
+        flex-direction: column;
+        align-items: stretch; /* Botones a lo ancho de la pantalla */
+        padding: 1.5rem;
+        gap: 15px;
+    }
+
+    fieldset {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #generate-btn {
+        width: 100%;
+        padding: 1.2rem; /* Botón más grande para facilitar el toque con el dedo */
+    }
+
+    .palette-grid {
+        /* En móviles muy pequeños, mostramos una sola columna o dos más estrechas */
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 0.75rem;
+    }
+
+    .color-block {
+        height: 120px; /* Reducimos la altura del color para que no ocupe tanto scroll */
+    }
+
+    code {
+        font-size: 0.9rem; /* Texto de código más compacto */
+    }
 }
