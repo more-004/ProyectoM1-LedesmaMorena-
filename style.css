@@ -149,3 +149,59 @@ code {
     opacity: 1;
     transform: translateY(-10px);
 }
+
+/* 6. Responsividad (Media Queries) */
+
+/* Ajustes para tablets y móviles */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem; /* Menos espacio en los bordes de la pantalla */
+    }
+
+    header h1 {
+        font-size: 1.8rem; /* Título más pequeño para que no rompa línea */
+    }
+
+    .controls {
+        flex-direction: column; /* Apila los controles verticalmente */
+        align-items: stretch;
+        width: 100%;
+        padding: 1.5rem;
+        gap: 15px;
+    }
+
+    #generate-btn {
+        width: 100%; /* Botón de ancho completo en móvil */
+        padding: 0.8rem;
+    }
+
+    fieldset {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    select {
+        width: 100%; /* Selectores más fáciles de tocar */
+    }
+
+    .palette-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Columnas un poco más angostas */
+        gap: 1rem;
+    }
+
+    .color-block {
+        height: 120px; /* Reducimos un poco la altura para ver más colores a la vez */
+    }
+}
+
+/* Ajustes para móviles muy pequeños (como iPhone SE) */
+@media (max-width: 400px) {
+    .palette-grid {
+        /* En pantallas muy pequeñas, forzamos 2 columnas para que no se vea una sola gigante */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    code {
+        font-size: 0.9rem; /* Fuente de código más pequeña */
+    }
+}
